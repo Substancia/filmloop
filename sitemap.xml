@@ -3,55 +3,55 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/about/</loc>
+    <loc>https://substancia.github.io/filmloop/about/</loc>
   </url>
   
   <url>
-    <loc>/post/vivamus-lacus-mauris/</loc>
+    <loc>https://substancia.github.io/filmloop/post/vivamus-lacus-mauris/</loc>
     <lastmod>2013-06-17T12:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/service/service3/</loc>
+    <loc>https://substancia.github.io/filmloop/service/service3/</loc>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://substancia.github.io/filmloop/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/service/service1/</loc>
+    <loc>https://substancia.github.io/filmloop/service/service1/</loc>
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2013-06-17T12:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
+    <loc>https://substancia.github.io/filmloop/</loc>
     <lastmod>2013-06-17T12:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/service/service4/</loc>
-  </url>
-  
-  <url>
-    <loc>/service/</loc>
+    <loc>https://substancia.github.io/filmloop/post/</loc>
+    <lastmod>2013-06-17T12:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>https://substancia.github.io/filmloop/service/service4/</loc>
+  </url>
+  
+  <url>
+    <loc>https://substancia.github.io/filmloop/service/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/service/service2/</loc>
+    <loc>https://substancia.github.io/filmloop/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://substancia.github.io/filmloop/service/service2/</loc>
   </url>
   
 </urlset>
