@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://substancia.github.io/filmloop/css/style.css">
+	<link rel="stylesheet" href="https://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+	<link rel="stylesheet" href="https://substancia.github.io/filmloop/css/jquery.fileupload.css">
+	<link rel="stylesheet" href="https://substancia.github.io/filmloop/css/jquery.fileupload-ui.css">
+	<noscript><link rel="stylesheet" href="https://substancia.github.io/filmloop/css/jquery.fileupload-noscript.css"></noscript>
+	<noscript><link rel="stylesheet" href="https://substancia.github.io/filmloop/css/jquery.fileupload-ui-noscript.css"></noscript>
+
+   	<style type="text/css">
+		@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+		body {
+			background: #e0e0e0;
+		/*	color: #f8ae45;*/
+			font-weight: 400;
+			font-family: 'Lato', Arial, sans-serif;
+			margin:0;
+			padding:0;
+		}
+		img {
+			width:250px;
+			height:300px;
+			max-width: 500px;
+			max-height: 500px;
+			/*object-fit:cover;*/
+		}
+		.col-md-4 {
+			padding-bottom: 20px;
+		}
+		.ccform{
+			position: relative;
+			bottom: 0;
+		}
+		.container{
+			background: #fff;
+			border-radius: 10px;
+			width: 80%;
+		}
+		.subimg:hover{
+			background: 	#3CB371;
+
+			}
+		.ccbtn{
+			border:none;
+			background:#000;
+			color:#FFFFFF;
+			padding:12px 25px;
+			cursor:pointer;
+			text-decoration:none;
+			border-radius: 5px;
+			font-weight:bold;
+		}
+		.ccbtn:hover{
+
+			background:#3cb371;
+		}
+
+		footer {
+		  background: #222222;
+/*		  position: absolute;
+*/	   		right: 0;
+	  		bottom: 0;
+	  		left: 0;
+		  padding: 10px;
+		  font-size: 20px;
+		  color: #777;
+		  margin-top: 20px;
+		}
+		a, a:hover {
+			text-decoration: none;
+		}
+		
+	</style>
+
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="form-group" id="uploder">
+		    <form id="fileupload" action="https://jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data">
+		        <!-- Redirect browsers with JavaScript disabled to the origin page -->
+		        <noscript><input type="hidden" name="redirect" value="https://blueimp.github.io/jQuery-File-Upload/"></noscript>
+		        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+		        <div class="row fileupload-buttonbar">
+		            <div class="col-lg-7">
+		                <!-- The fileinput-button span is used to style the file input field as button -->
+		                <span class="btn btn-success fileinput-button">
+		                    <i class="glyphicon glyphicon-plus"></i>
+		                    <span>Add files...</span>
+		                    <input type="file" name="files[]" multiple style="position: absolute;">
+		                </span>
+		                <button type="submit" class="btn btn-primary start">
+		                    <i class="glyphicon glyphicon-upload"></i>
+		                    <span>Start upload</span>
+		                </button>
+		                <button type="reset" class="btn btn-warning cancel">
+		                    <i class="glyphicon glyphicon-ban-circle"></i>
+		                    <span>Cancel upload</span>
+		                </button>
+		                <button type="button" class="btn btn-danger delete">
+		                    <i class="glyphicon glyphicon-trash"></i>
+		                    <span>Delete</span>
+		                </button>
+<!-- 		                <input type="checkbox" class="toggle"> -->
+		                <!-- The global file processing state -->
+		                <span class="fileupload-process"></span>
+		            </div>
+		            <!-- The global progress state -->
+		            <div class="col-lg-5 fileupload-progress fade">
+		                <!-- The global progress bar -->
+		                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+		                    <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+		                </div>
+		                <!-- The extended global progress state -->
+		                <div class="progress-extended">&nbsp;</div>
+		            </div>
+		        </div>
+		        <!-- The table listing the files available for upload/download -->
+		        <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
+		    </form>
+		</div>
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
+<script src="https://substancia.github.io/filmloop/js/jquery.ui.widget.js"></script>
+<!-- The Templates plugin is included to render the upload/download listings -->
+<script src="https://blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script>
+<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+<script src="https://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+<!-- The Canvas to Blob plugin is included for image resizing functionality -->
+<script src="https://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+<!-- Bootstrap JS is not required, but included for the responsive demo navigation -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- blueimp Gallery script -->
+<script src="https://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+<script src="https://substancia.github.io/filmloop/js/jquery.iframe-transport.js"></script>
+<!-- The basic File Upload plugin -->
+<script src="https://substancia.github.io/filmloop/js/jquery.fileupload.js"></script>
+<!-- The File Upload processing plugin -->
+<script src="https://substancia.github.io/filmloop/js/jquery.fileupload-process.js"></script>
+<!-- The File Upload image preview & resize plugin -->
+<script src="https://substancia.github.io/filmloop/js/jquery.fileupload-image.js"></script>
+<!-- The File Upload audio preview plugin -->
+<script src="https://substancia.github.io/filmloop/js/jquery.fileupload-audio.js"></script>
+<!-- The File Upload video preview plugin -->
+<script src="https://substancia.github.io/filmloop/js/jquery.fileupload-video.js"></script>
+<!-- The File Upload validation plugin -->
+<script src="https://substancia.github.io/filmloop/js/jquery.fileupload-validate.js"></script>
+<!-- The File Upload user interface plugin -->
+<script src="https://substancia.github.io/filmloop/js/jquery.fileupload-ui.js"></script>
+
+</body>
+</html>
