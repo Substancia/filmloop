@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	<style>
+		.selected { opacity: 0.5; }
+	</style>
+</head>
+<body>
+<form>
+    <div>
+        <img data-id="1" src="images/image1.jpg" style="max-width: 300px;" />
+        <input type="hidden" name="images[]" />
+    </div>
+    <div>
+        <img data-id="2" src="images/image2.jpg" style="max-width: 300px;" />
+        <input type="hidden" name="images[]" />
+    </div>
+    <div>
+        <img data-id="3" src="images/image3.png" style="max-width: 300px;" />
+        <input type="hidden" name="images[]" />
+    </div>
+    <input type="submit" value="submit" />
+</form>
+
+<script>
+	$('img').live('click', function(){
+	    var $this = $(this);
+	    $this.toggleClass('selected');
+	    
+	    if($this.hasClass('selected'))
+	        $this.next().val('1')
+	    else
+	        $this.next().val('');
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
+	
+	<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/registration.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>Filmloop</title>
+
+
+<style>
+/* The container */
+body{
+	
+	/*background-image: url("images/background3.jpeg");*/
+	position: relative;
+	background-color: #e0e0e0;
+}
+.container{
+	width: 90%;
+	background: #fff;
+	border-radius: 10px;
+	padding-bottom: 40px;
+	margin-bottom: 30px;
+}
+.check {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 13px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #eee; 
+	border: 1px solid lightgrey;
+	border-radius: 9px;
+}
+
+/* On mouse-over, add a grey background color */
+.check:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.check input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.check input:checked ~ .checkmark:after {
+    display: block;
+}
+.performance_skills {
+	background-color: #eee;
+	padding: 3px;
+}
+.work_history{
+	background-color: #eee;
+	padding: 3px;
+}
+
+/* Style the checkmark/indicator */
+.check .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+   /* border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition: 10px;*/
+}
+.achivement{
+	border-top: 10px;
+}
+.achivement{
+	border-top: 40px;
+}
+.mutliSelect1 ul {
+	list-style-type: none;
+}
+.mutliSelect2 ul{
+	list-style-type: none;
+}
+.skin, .hair_pattern, .physique, .hair_length {
+	background-color: #eee;
+	margin-top: 0;
+	padding-left: 4px;
+	font-size: 14px;
+}
+.skin_com, .hair_pat, .phy, .hair_len{
+	background-color: #000;
+	margin-bottom: 0;
+	color: #fff;
+	padding:3px;
+	border-radius: 5px 5px 0 0;
+}
+.hair_pattern, .hair_length{
+	margin-top: -10px;
+}
+
+footer {
+  background: #222222;
+  
+   right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  font-size: 20px;
+  color: #777;
+  margin-top: 20px;
+}
+.ccformfield {
+	width: 100%;
+}
+.ccbtn {
+	display: inline;
+}
+a, a:hover {
+	text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+	  <div class="nav">
+		       <nav class="navbar navbar-inverse">
+		        <div class="container-fluid">
+		          <div class="navbar-header">
+		            <a class="navbar-brand" href="#">Filmloop</a>
+		          </div>
+		          <ul class="nav navbar-nav">
+		            <li><a href="/contact1/">Contact us</a></li>
+		            <li><a href="/logout/"><i class="fa fa-sign-out"></i>Log out</a></li>
+		          </ul>
+		         
+		        </div>
+		       </nav>
+	  </div> 
+
+        <div class="container">
+           <form action="/regskills2/" method="post" enctype="multipart/form-data" onsubmit=" return validateForm()">
+	            <div id="text">
+	              <center><h2>Help us know you better!</h2></center>
+	              <div style="height: 1px; width: 100px; background-color: black"></div>
+	              <h4>Choose your physical atributes:</h4>
+	              <br>
+	            </div>
+	            <div class="row">
+	            	<div class="col-md-6">
+			            <div class="ccfield-prepend">
+					        <input class="ccformfield" type="number" placeholder="Height (in cm)" name = "height" required min="0" max="250">
+					    </div>
+					</div>
+					<div class="col-md-6">
+					      <div class="ccfield-prepend">
+					        <input class="ccformfield" type="number" placeholder="Waist(in cm)" name = "waist" required min="0" max="150">
+					    </div>
+					</div>
+					<div class="col-md-6">
+					    <div class="ccfield-prepend">
+					        <input class="ccformfield" type="number" placeholder="Weight (in kg)" name = "weight" required min="0" max="400">
+					    </div>
+					</div>
+					<div class="col-md-6">
+					    <div class="ccfield-prepend">
+					        <input class="ccformfield" type="number" placeholder="Chest/bust(in cm)" name = "chest" required min="0" max="150">
+					    </div>
+					</div>
+				</div>
+
+			        <br>
+			    <div class="gender_1" style="">
+				    
+				    <div class="row">
+				    	<div class="col-md-6">
+						    <h4 class="skin_com">Skin complexion</h4>
+						    			<div class="skin">
+							               	<div class="row">
+							               		<div class="col-md-3">
+													<input type="radio" name="skin" value="fair" id="fair">
+													<label for="fair"><p>Fair</p></label>
+												</div>
+							               		<div class="col-md-3">
+													<input type="radio" name="skin" value="wheatish" id="wheatish">
+													<label for="wheatish"><p>wheatish</p></label>
+												</div>
+							               		<div class="col-md-3">
+													<input type="radio" name="skin" value="dark" id="dark">
+													<label for="dark"><p>dark</p></label>
+												</div>
+											</div>
+							            </div>
+						</div>
+						<div class="col-md-6">	        
+							 <h4 class="hair_pat">Hair pattern<h4>
+						    			<div class="hair_pattern">
+							               	<div class="row">
+							               		<div class="col-md-3">
+													<input type="radio" name="hair_pattern" value="curly" id="curly">
+													<label for="curly"><p>Curly</p></label>
+												</div>
+							               		<div class="col-md-3">
+													<input type="radio" name="hair_pattern" value="straight" id="straight">
+													<label for="straight"><p>Straight</p></label>
+												</div>
+											</div>
+										</div>
+						</div>
+						<div class="col-md-6">	        
+							 <h4 class="phy">Physique</h4>
+						    			<div class="physique">
+							               	<div class="row">
+							               		<div class="col-md-3">
+													<input type="radio" name="physique" value="slim" id="slim">
+													<label for="slim"><p>Slim</p></label>
+												</div>
+							               		<div class="col-md-3">
+													<input type="radio" name="physique" value="average" id="average">
+													<label for="average"><p>Average</p></label>
+												</div>
+							               		<div class="col-md-3">
+													<input type="radio" name="physique" value="athletics" id="athletics">
+													<label for="athletics"><p>Athletic</p></label>
+												</div>
+							               		<div class="col-md-3">
+													<input type="radio" name="physique" value="heavy" id="heavy">
+													<label for="heavy"><p>Heavyset</p></label>
+												</div>
+											</div>
+							            </div>
+						</div>
+						<div class="col-md-6">	        
+							  <h4 class="hair_len">Hair length<h4>
+						    			<div class="hair_length">
+							               	<div class="row">
+							               		<div class="col-md-3">
+													<input type="radio" name="hair_length" value="long" id="long">
+													<label for="long"><p>Long</p></label></td>
+												</div>
+							               		<div class="col-md-3">
+													<input type="radio" name="hair_length" value="sholder_length" id="sholder_length">
+													<label for="sholder_length"><p>Shoulder length</p></label></td>
+												</div>
+							               		<div class="col-md-3">
+													<input type="radio" name="hair_length" value=chin_length id=chin_length>
+													<label for=chin_length><p>Chin length</p></label></td>
+												</div>
+							               		<div class="col-md-3">
+													<input type="radio" name="hair_length" value="short" id="short">
+													<label for="short"><p>Short</p></label></td>
+												</div>
+							               		<div class="col-md-3">
+													<input type="radio" name="hair_length" value="blad" id="blad">
+													<label for="blad"><p>Blad</p></label></td>		
+												</div>
+											</div>
+							            </div>  
+						</div>
+					</div>
+
+		            <div id="form" class="skillsform">
+			            <form action="/regskills2/" method="post" enctype="multipart/form-data" onsubmit=" return validateForm()">
+			           	 {% csrf_token %}
+			            <form action="/regskills/" method="post" enctype="multipart/form-data" onsubmit=" return validateForm()">
+			            	                              <!-- <br> -->
+				            <center><div style="padding-top: 50px;"><a href=""><button class="ccbtn" style="margin-right: 10px;">Back</button></a><input type="submit" value = "Next" class="ccbtn" onclick="submit" style="border-top: 90px;" /></div></center>
+			        </div>
+		           </div>
+	         </form>
+	     </form>
+	 </div>
+
+    <br>
+	<div class="ccform">
+	  <h4>Account progress</h4>
+	  <div class="progress">
+	    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:60%">
+	      60% Completed
+	    </div>
+	  </div>
+	</div>
+
+	<footer>
+		
+		<center>© Filmloop.in</center>
+		
+	</footer>
+	<script>
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+body{	
+	text-align: center;	
+	background-image: -webkit-linear-gradient(top,#333,#333);
+	margin: 0;
+	padding: 0;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
+.container{
+	display: grid;
+	grid-template-columns: repeat(12,1fr);
+	margin: 0 auto;	
+	position: relative;
+	
+}
+.nav {
+	grid-column: 1/13;
+	grid-row: 100px;
+	position: -webkit-sticky;
+  	position: sticky;
+  	top: 0;
+}
+.aside {
+	grid-column: 1/4;
+}
+#gallery{
+	grid-column: 4/13;
+}
+.container div{
+	background-color:;
+	
+}
+/*.container div:nth-child(even){
+	background-color: green;
+}*/
+.container #gallery{
+	display: inline-block;
+	position: relative;
+	
+	background-color: #333;
+}
+
+
+img {
+	width:300px;
+	height:350px;
+	object-fit:contain;
+	cursor:pointer;
+}
+.aside{
+	/*display: inline-block;*/
+	display: inline-block;
+	align-items:top; 
+	background-color: #999;
+}
+
+.aside div{
+	background-color: #333;
+	border: 1px solid #333;
+	margin: 0px;
+
+}
+
+
+
+h4{
+	font-family: 'Lobster', cursive;
+	color: #fff;
+}
+p{
+	font-family: 'Lobster', cursive;
+	color: #fff;
+}
+
+
+
+.container #gallery .image{
+	display: inline-block;
+	position: relative;
+	margin: 10px;
+	border: 1px solid #111;
+    padding: 5px;
+    background-color: #000;
+    border-radius: 6px;
+    cursor: default;
+  
+}
+
+/*
+.container #gallery .image label{
+	width: 330px;
+	height: 360px;
+	position: absolute;
+	border-color: #fff;
+	color: #fff;
+	border-radius: 6px;
+	margin: 10px;
+	bottom:-10px; 
+	left: -10px; 
+	
+
+}
+
+.container #gallery .image input[type="checkbox"]{
+	visibility:;
+}
+
+.container #gallery .image label:after{
+	content: ;	
+	width: 328px;
+	height: 360px;
+	position: absolute;
+	border-radius: 6px;
+	margin: 10px;
+	bottom:-10px; 
+	left: -11px; 
+	cursor: pointer;
+}
+
+.container #gallery .image input[type="checkbox"]:checked +label:after {
+	content: '';
+	color: red;
+	border: 1px solid #fff;
+	}
+
+.container #gallery .image label:hover{
+	border: 1px solid #fff;
+	transform: scale(1.1);
+}
+	
+}
+.container #gallery .image:hover{
+	transform: scale(1.1);
+}*/
+

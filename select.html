@@ -1,0 +1,114 @@
+{%load staticfiles%}
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--<link rel="stylesheet" type="text/css" href="/static/css/main1.css">-->
+<link rel="stylesheet" type="text/css" href="/static/css/select.css">
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<script type="text/javascript" src="/static/js/select.js"></script>
+
+<style type="text/css">
+footer {
+  background: #222222;
+  padding: 10px;
+  font-size: 20px;
+  color: #777;
+  margin-top: 30px;
+}
+</style>
+</head>
+  <body>
+
+  
+    <div class="nav" style="position: sticky; top: 0; z-index: 100;">
+       <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Filimingo</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li ><a href="/search/">Home</a></li>
+            <li ><a href="/upload/">Upload</a></li>
+            <li ><a href="/contact/">Contact us</a></li>
+            <li><a href="/comparisonpage/">Comparison</a></li>
+            <li style="position: absolute; right: 0;"><a href="/logout/"><i class="fa fa-sign-out"></i>Log out</a></li>
+
+            
+          </ul>
+        </div>
+       </nav>
+    </div>
+     <div class="aside">
+            
+          <!-- <form action="/search/" method="post" enctype="multipart/form-data" onsubmit=" return validateForm()">
+          {% csrf_token %}
+          
+          <button id="selector" class="btn btn-default btn-lg" onclick="ajaxfunc()">Download</button>
+          </form> -->
+          <div>
+            <p id="demo"></p>  
+      
+           
+          </div>
+     </div> 
+
+      
+     <div id="gallery">     
+       {% for i in search_list %}
+              {% load static %}
+       <div ><img src="{% static i %}" data="{{i}}" class="image" id="{{i}}">
+          <!-- <button class="btn btn-default mybtn">Click here to profile</button> -->
+          <button class="btn btn-default mybtn remove">Remove</button>
+       </div>
+          {% empty %}
+          
+          <p>No matches</p>
+
+        {% endfor %}
+       
+      
+    
+   </div>
+
+<form method="post" action="/download/">
+  {% csrf_token %}
+  <input type="hidden" name="chosen" id="chosen">
+  <button type="Submit">Download</button>
+</form>
+
+  <footer>
+    
+    <center>© Filmloop.in</center>
+    
+  </footer>
+  
+<script type="text/javascript">
+  $("div.choosing").ready(function(){
+    $('#chosen').val($('#chosen').val() + $(this).attr('id') + ' ');
+  });
+
+  $(document).ready(function(){
+      $("button.remove").click(function(){
+        var $this = $(this);
+        $('#chosen').val($('#chosen').val() + $this.siblings("img").attr('id') + ' ');
+        $this.parent().css({"display": "none"});
+      });
+  });
+
+</script>
+  </body>
+</html>
+
+
+
+
+

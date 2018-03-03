@@ -1,0 +1,18 @@
+
+p:first-letter{
+	
+	font-size: 30px;
+	line-height: 1;
+	font-weight: bold;
+	margin-right: 3px;
+	text-shadow: 1px;
+	color: #9c0;
+	text-shadow: #690 .05em .05em;
+	font-family: "Times New Roman", Times, serif;
+}
+
+.contact{
+	align-items: center;
+	align-items: center;
+	text-align: center;
+}

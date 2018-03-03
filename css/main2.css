@@ -1,0 +1,39 @@
+body{ 
+  text-align: center; 
+  background-image: -webkit-linear-gradient(top,#fff,#fff);
+  margin: 0;
+  padding: 0;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  margin: 0 auto; 
+  position: relative;
+}
+
+
+.container #text{
+  grid-column: 1/13;
+}
+.container #form{
+  display: grid;
+  grid-column: 1/13;
+    
+}
+.container #form #name{
+  grid-column: 3/10;
+}
+
+#place{
+  grid-column: 1/12;
+}
+
+#uploader{
+
+}

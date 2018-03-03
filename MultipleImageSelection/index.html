@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Select images</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<style type="text/css">
+		img {
+			max-width: 100%;
+			border: 1px solid grey;
+		}
+		.row {
+			padding-top: 20px;
+		}
+		.selected {
+			opacity: 0.5;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h2>Select Multiple Images</h2>
+		<div class="row">
+			<div class="col-sm-4">
+		        <img id="1" src="images/image1.jpg" />
+			</div>
+			<div class="col-sm-4">
+		        <img id="2" src="images/image2.jpg" />
+			</div>
+			<div class="col-sm-4">
+		        <img id="3" src="images/image3.png" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+		        <img id="4" src="images/image4.png" />
+			</div>
+			<div class="col-sm-4">
+		        <img id="5" src="images/image5.png" />
+			</div>
+			<div class="col-sm-4">
+		        <img id="6" src="images/image6.png" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+		        <img id="7" src="images/image7.png" />
+			</div>
+			<div class="col-sm-4">
+		        <img id="8" src="images/image8.png" />
+			</div>
+			<div class="col-sm-4">
+		        <img id="9" src="images/image9.png" />
+			</div>
+		</div>
+		<form>
+			<input type="hidden" name="images" id="images">
+			<center style="padding: 30px">
+				<input type="submit" value="submit" />
+			</center>
+		</form>
+	</div>
+
+	<script>
+		$('img').live('click', function(){
+		    var $this = $(this);
+		    $this.toggleClass('selected');
+		    
+		    if($this.hasClass('selected')) {
+		        $('#images').val($('#images').val() + $this.attr('id') + ' ');
+		    }
+		    else {
+		        $('#images').val($('#images').val().replace($this.attr('id')+' ',''));
+		    }
+		});
+	</script>
+
+</body>
+</html>

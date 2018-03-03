@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+	<link rel="stylesheet" href="css/registration.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>Filmloop -- Profile</title>
+
+<style type="text/css">
+
+	footer {
+	  background: #222222;
+	  padding: 20px;
+	  font-size: 20px;
+	  color: #777;
+	  margin-top: 20px;
+	}
+	.push {
+		padding-left: 30px;
+	}
+
+</style>
+</head>
+<body>
+
+	<div class="nav">
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Filmloop</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="/search/">Home</a></li>
+					<li><a href="/upload/">Upload</a></li>
+					<li><a href="/contact/">Contact us</a></li>
+					<li><a href="/comparisonpage/">Comparison</a></li>
+				</ul>
+				<div><span class="glyphicon glyphicon-cog"></span></div>
+			</div>
+		</nav>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7">
+				<legend>Personal details</legend>
+				<div class="personal push">
+					<legend>Fullname: {{ fields.name }}</legend>
+					<legend>Place: {{ fields.place }}</legend>
+					<legend>Email: {{ fields.email }}</legend>
+					<legend>Phone: {{ fields.phone }}</legend>
+					<legend>Height: {{ fields.height }}</legend>
+					<legend>Weight: {{ fields.weight }}</legend>
+					<legend>Age: {{ fields.age }}</legend>
+					<legend>Gender: {{ fields.gender }}</legend>
+					<legend>Interests:
+						<ul>
+							{% for i in fields.interest %}
+							<li>{{ i }}</li>
+							{% endfor %}
+						</ul>
+					</legend>
+				</div>
+				<hr>
+				<legend>Skills</legend>
+				<div class="skills push">
+					<legend>Musical skills
+						<ul>
+							{% for i in musical_skills %}
+							<li>{{ i }}</li>
+							{% endfor %}
+						</ul>
+					</legend>
+					<legend>Performance skills
+						<ul>
+							{% for i in performance_skills %}
+							<li>{{ i }}</li>
+							{% endfor %}
+						</ul>
+					</legend>
+					<legend>Athletic skills
+						<ul>
+							{% for i in athletic_skills %}
+							<li>{{ i }}</li>
+							{% endfor %}
+						</ul>
+					</legend>
+					<legend>Work history
+						<ul>
+							{% for i in work_history %}
+							<li>{{ i }}</li>
+							{% endfor %}
+						</ul>
+					</legend>
+				</div>
+			</div>
+			<div class="col-md-5">
+				<legend>Photos</legend>
+					<ul>
+
+						{% for i in url_list %}
+					    {% load static %}
+      					<img src="{% static i %}" >
+   						 {% empty %}
+      					<p>No matches</p>
+  						{% endfor %}
+
+					</ul>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		
+		<center>© Filmloop.in</center>
+		
+	</footer>
+	
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<title>Filimingo Profile</title>
+  	 <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" type="text/css" href="/static/css/Profile.css">
+      <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  
+</head>
+<body>
+<div class="container">
+	<div class="navbar">
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Filimingo</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li ><a href="/search/">Home</a></li>
+        <li><a href="/upload/">Upload</a></li>
+<!--         <li class="active"><a href="#">Profiles</a></li>
+ -->        <li><a href="/contact/">Contact Us</a></li>
+        <li><a href="/comparisonpage/">Comparison</a></li>
+
+        <li><a href="#"></a></li>
+      </ul>
+    </div>
+    </nav>
+  </div>
+  <div class="aside">
+    <h3>Name :  {{fields.name}}</h3>
+    <p>Place :  {{fields.place}}</p>
+    <p>email :  {{fields.email}}</p>
+    <p>Age   : {{fields.age}}</p>
+    <p>Height: {{fields.height}}</p>
+    <p>Interest: {{fields.interest}}<p>
+
+    
+  </div>
+  <div id="gallery">
+  {% for i in url_list %}
+    {% load static %}  
+
+      <img src="{% static i %}" >
+    
+    {% empty %}
+          
+      <p>No matches</p>
+          
+  {% endfor %}
+
+  </div>
+ 
+  <!-- <div class="pager">
+    <ul class="pager">
+      <li class="previous"><a href="#">Previous</a></li>
+      <ul class="pagination">
+      <li class="active"><a href="#">1</a></li>
+      <li ><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+    </ul>
+      <li class="next"><a href="#">Next</a></li>
+    </ul>
+  </div> -->
+
+</div>
+<!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

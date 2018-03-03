@@ -1,0 +1,42 @@
+#left{
+	width:20%;
+	min-width: 20px;  
+   background:#999	; float:left; 
+}
+.my-sidebar{
+	min-width: 200px;
+}
+.card{
+	
+	
+}
+body{
+	width: 100%;
+}
+.dropdown-menu {
+  max-width: 18px;
+}
+.dropdown-menu li a {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.btn.btn-primary.dropdown-toggle{
+	width: 100px;
+}
+.skip {
+	margin-top: 20%; 
+}
+.col-xs-3{
+	background-color: 
+}
+
+.img {
+    position: relative;
+    float: left;
+    width:  100px;
+    height: 100px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}

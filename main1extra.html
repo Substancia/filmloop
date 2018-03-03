@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Filimingo</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="main1.css">
+
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!--<script type="text/javascript">
+	  $(document).ready(function(){
+	    console.log('hello');
+	    $('#btn1').on('click', function(){
+	      dict = {'key1':"value1", 'key2':"value2"};
+	      $('.card').append(dict['key1']);
+	      $('.card').append(dict['key2']);
+	      $('.card').append('<img class="img-thumbnail" src="https://www.w3schools.com/tags/smiley.gif">');
+	      // ('.card').append(el);
+	    });
+	  });
+
+	</script>-->
+	<script type="text/javascript">
+	  $files = $_FILES['upload_attachment'];
+	    foreach ($_FILES as $file => $array) {
+	      $newupload = insert_attachment($file,null);
+	      // save the $newupload with you from data, as psot id for the 
+
+	     }
+	     function  insert_attachment($file_handler,$post_id,$setthumb='false') {
+
+	        // check to make sure its a successful upload
+	        if ($_FILES[$file_handler]['error'] !== UPLOAD_ERR_OK) __return_false();
+
+	          require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+	          require_once(ABSPATH . "wp-admin" . '/includes/file.php');
+	          require_once(ABSPATH . "wp-admin" . '/includes/media.php');
+	          $attach_id = media_handle_upload( $file_handler, $post_id );
+
+	       if ($setthumb) update_post_meta($post_id,'_thumbnail_id',$attach_id);
+	         return $attach_id;
+	     } 
+	</script>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse">
+  	  <div class="container-fluid">
+  	    <div class="navbar-header">
+  	      <a class="navbar-brand" href="#">Filimingo</a>
+  	    </div>
+  	    <ul class="nav navbar-nav">
+  	      <li class="active"><a href="#">Home</a></li>
+  	      <li ><a href="main2.html">Upload</a></li>
+  	      <li ><a href="Profile.html">Profiles</a></li>
+  	      <li ><a href="contact.html">Contact us</a></li>
+          <li><a href="comparison.html">Comparison</a></li>
+  	      <li><a href="#"></a></li>
+  	    </ul>
+  	    <div><span class="glyphicon glyphicon-cog"></span></div>
+  	  </div>
+  </nav>
+ <div class="container">
+    <div class="row">
+      <div class="colco-xs-3">
+          
+        <form action="/search/" method="post" enctype="multipart/form-data" onsubmit=" return validateForm()">
+        {% csrf_token %}
+                
+        <div class="height"><h4>Weight</h4> 
+      		<ul style="list-style: none">
+      			<li>
+      			<label>min weight</label><br>
+      			<input type="number" name="weightmin" min="0" max="120">
+      			</li>
+      			<li>
+      			<label>max weight</label><br>
+      			<input type="number" name="weightmax" min="0" max="120">
+      			</li>
+       		</ul>
+       	</div>	
+        <div>
+          <h4> Height</h4>
+	          <ul style="list-style: none">
+	            <li>
+  	      			<label>min height</label><br>
+  	      			<input type="number" name="heightmin" min="0" max="230">
+  	      		</li>
+  	      		<li>
+  	      			<link rel="stylesheet" type="text/css" href="">
+  	      			<label>max height</label><br>
+  	      			<input type="number" name="heightmax" min="0" max="200">
+  	      		</li>
+	      		</ul>
+      	</div>      		
+           <!-- <div><h4> Beard</h4></div>
+            <span class="a-list-item">
+              <div data-a-input-name="s-ref-checkbox-1464451031" class="a-checkbox s-ref-link-cursor a-spacing-none"><label><input type="checkbox" name="s-ref-checkbox-1464451031" value="false">
+              <span class="a-size-small a-color-base s-ref-text-link s-ref-link-cursor">less than 130</span></label>
+              </div>
+            </span>
+            -->
+            
+         <div class="">
+                    <label for="pwd">Beard:</label>
+                    <input type="radio" name="beard" value=1 id="beard_yes">
+                    <label for="pwd">Yes</label>
+                    <input type="radio" name="beard" value=0 id="beard_no">
+                    <label for="pwd">No</label>
+         </div>
+         <div class="">
+                    <label for="pwd">Mustache:</label>
+                    <input type="radio" name="mustache" value=1>
+                    <label for="pwd">Yes</label>
+                    <input type="radio" name="mustache" value=0>
+                    <label for="pwd">No</label>
+         </div>
+         <div class="">
+                    <label for="pwd">Glasses:</label>
+                    <input type="radio" name="glass" value=1>
+                    <label for="pwd">Yes</label>
+                    <input type="radio" name="glass" value=0>
+                    <label for="pwd">No</label>
+         </div>
+          <div class="">
+                    <label for="pwd">Gender:</label>
+                    <input type="radio" name="Gender" value=1>
+                    <label for="pwd">Male</label>
+                    <input type="radio" name="Gender" value=0>
+                    <label for="pwd">Female</label>
+         </div>
+         
+
+
+         <input type="submit" value = "search" class="upload" onclick="submit" style="background-color: MediumSeaGreen"; />
+      	</form>
+
+    <p id="demo"></p>  
+  
+    {% for i in search_list %}
+      {% load static %}
+  
+  <div class="col-md-4" class="img-thumbnail">
+      <img src="{% static i %}" class="image" class="img-responsive"  alt="Cinque Terre" >
+      <img src="/w3images/nature.jpg">
+      {% empty %}
+      
+      <p>No matches</p>
+
+    {% endfor %}
+  </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.minE
+
+    .js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
